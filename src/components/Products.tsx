@@ -1,25 +1,36 @@
+import men from "../assets/images/men.jpg"
+import women from "../assets/images/women.jpg"
+import kids from "../assets/images/kids.jpg"
+import toys from "../assets/images/toys.jpg"
+
+import { useCart } from "../context/cartcontext"
+
+
 function Products() {
+
+  const { addToCart } = useCart()
+
 
   const products = [
     {
-      name: "Teddy Bear",
-      price: "$15",
-      image: "🧸"
+      name: "Men Collection",
+      price: "$50",
+      image: men
     },
     {
-      name: "Toy Car",
+      name: "Women Collection",
+      price: "$50",
+      image: women
+    },
+    {
+      name: "Kids Collection",
+      price: "$30",
+      image: kids
+    },
+    {
+      name: "Toys Collection",
       price: "$20",
-      image: "🚗"
-    },
-    {
-      name: "Doll House",
-      price: "$25",
-      image: "🏠"
-    },
-    {
-      name: "Puzzle Game",
-      price: "$10",
-      image: "🧩"
+      image: toys
     }
   ]
 
@@ -27,7 +38,7 @@ function Products() {
   return (
     <section className="products">
 
-      <h2>Featured Toys</h2>
+      <h2>Featured Collection</h2>
 
       <div className="product-container">
 
@@ -36,7 +47,10 @@ function Products() {
           <div className="product-card" key={index}>
 
             <div className="product-image">
-              {product.image}
+              <img 
+                src={product.image}
+                alt={product.name}
+              />
             </div>
 
             <h3>
@@ -47,7 +61,9 @@ function Products() {
               {product.price}
             </p>
 
-            <button>
+            <button 
+              onClick={() => addToCart(product)}
+            >
               Add To Cart
             </button>
 

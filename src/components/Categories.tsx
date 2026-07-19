@@ -7,15 +7,15 @@ function Categories() {
     },
     {
       name: "Mens",
-      image: "🚗"
+      image: "👔"
     },
     {
       name: "Womens",
-      image: "👧"
+      image: "👗"
     },
     {
       name: "Others",
-      image: "🧩"
+      image: "🛍️"
     }
   ]
 

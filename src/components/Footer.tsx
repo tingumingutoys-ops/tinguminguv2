@@ -20,7 +20,7 @@ function Footer() {
 
       <div>
         <h3>Contact</h3>
-        <p>Email: info@tingumingu.com</p>
+        <p>Email: tingumingutoys@gmail.com</p>
         <p>Pakistan</p>
       </div>
 

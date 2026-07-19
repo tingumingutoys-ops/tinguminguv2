@@ -1,26 +1,46 @@
+import { useCart } from "../context/cartcontext"
+
+
 function Header() {
+
+  const { cart } = useCart()
+
+
   return (
     <header className="header">
+
       <div className="logo">
         Tingu Mingu Toys
       </div>
 
+
       <nav>
         <a href="#">Home</a>
         <a href="#">Toys</a>
-        <a href="#">Kids</a>
-        <a href="#">Offers</a>
+        <a href="#">Mens</a>
+        <a href="#">Womens</a>
+        <a href="#">Others</a>
       </nav>
 
+
       <div className="actions">
-        <input 
-          type="text" 
-          placeholder="Search toys..."
+
+        <input
+          type="text"
+          placeholder="Search products..."
         />
-        <button>🛒 Cart</button>
+
+
+        <button>
+          🛒 Cart ({cart.length})
+        </button>
+
       </div>
+
+
     </header>
   )
 }
+
 
 export default Header
