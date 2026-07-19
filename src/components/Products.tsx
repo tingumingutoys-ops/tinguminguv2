@@ -3,7 +3,7 @@ import women from "../assets/images/women.jpg"
 import kids from "../assets/images/kids.jpg"
 import toys from "../assets/images/toy.jpg"
 
-import { useCart } from "../context/cartcontext"
+import { useCart } from "../context/cartcontext.tsx"
 
 
 function Products() {

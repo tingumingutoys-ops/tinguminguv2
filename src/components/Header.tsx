@@ -1,4 +1,4 @@
-import { useCart } from "../context/cartcontext"
+import { useCart } from "../context/cartcontext.tsx"
 
 
 function Header() {
