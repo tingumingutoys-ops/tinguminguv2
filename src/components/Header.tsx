@@ -5,6 +5,7 @@ function Header() {
 
   const { cart } = useCart()
 
+console.log("Cart Count:", cart.length);
 
   return (
     <header className="header">
