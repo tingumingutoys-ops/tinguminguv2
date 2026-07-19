@@ -1,56 +1,49 @@
-import { useCart } from "../context/cartcontext.tsx"
-
+import { useCart } from "../context/cartcontext";
 
 function Cart() {
+  const { cart } = useCart();
 
-  const { cart } = useCart()
-
+  const total = cart.reduce((sum, item) => {
+    return sum + Number(item.price.replace("$", ""));
+  }, 0);
 
   return (
     <section className="cart">
 
-      <h2>Your Cart</h2>
-
+      <h2>🛒 Shopping Cart</h2>
 
       {cart.length === 0 ? (
-
-        <p>
-          Your cart is empty
-        </p>
-
+        <p>Your cart is empty.</p>
       ) : (
-
-        <div>
-
+        <>
           {cart.map((product, index) => (
-
             <div className="cart-item" key={index}>
 
-              <img 
+              <img
                 src={product.image}
                 alt={product.name}
               />
 
-              <h3>
-                {product.name}
-              </h3>
-
-              <p>
-                {product.price}
-              </p>
+              <div>
+                <h4>{product.name}</h4>
+                <p>{product.price}</p>
+              </div>
 
             </div>
-
           ))}
 
-        </div>
+          <div className="cart-total">
+            <h3>Total: ${total}</h3>
 
+            <button>
+              Checkout
+            </button>
+          </div>
+        </>
       )}
 
-
     </section>
-  )
+  );
 }
 
-
-export default Cart
+export default Cart;
